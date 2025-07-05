@@ -40,8 +40,47 @@ class LinkedList{
         }
         return false;
     }
-}
-public class LLCycleDetecting {
+
+    public void removeCycle(){
+
+        Node slow=head;
+        Node fast=head;
+        boolean cycle=false;
+
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+            if(slow==fast){
+                cycle=true;
+                break;
+            }
+        }
+
+        if(cycle==false){
+            return;
+        }
+
+        slow=head;
+        Node prev=null;
+
+        while(slow!=fast){
+            prev=fast;
+            slow=slow.next;
+            fast=fast.next;
+        }
+        prev.next=null;
+    }
+
+    public void checkCycle(){
+            if(isCycle()){
+                System.out.println("Cycle is present");
+            }
+            else{
+                System.out.println("Cycle is not present");
+            }
+        }
+    }
+public class LLCycleDetectingRemoving {
     public static void main(String[] args){
         LinkedList l1=new LinkedList();  //1->2->3->2
         l1.head=new Node(1);
@@ -55,12 +94,11 @@ public class LLCycleDetecting {
         l2.insert(3);
         l2.insert(4);
 
-        if(l1.isCycle()){
-            System.out.println("Cycle is present");
-        }
-        else{
-            System.out.println("Cycyle is not present");
-        }
+        l1.checkCycle();
+
+        l1.removeCycle();
+        l1.checkCycle();
+
     }
     
 }
