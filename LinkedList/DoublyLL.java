@@ -45,10 +45,9 @@ class DoublyLinkedList{
 
     public void insertAtMiddle(int data,int position){
         Node newNode=new Node(data);
-
+        
         if(head==null){
             head=newNode;
-            return;
         }
 
         if(position==1){
