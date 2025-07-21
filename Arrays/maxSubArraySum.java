@@ -37,11 +37,23 @@ public class maxSubArraySum {
         }
         return maxSum;
     }
+
+    public static int kadaneAlgorithm(int arr[]){
+        int n=arr.length;
+        int currSum=arr[0],maxSum=arr[0];
+        for(int i=1;i<n;i++){
+            currSum=Math.max(arr[i],currSum+arr[i]);
+            maxSum=Math.max(currSum,maxSum);
+        }
+        return maxSum;
+
+    }
     
     public static void main(String[] args) {
         int arr[]={1,-2,6,-1,3};
         //  System.out.println(maxSubArraySumBrute(arr));
-        System.out.println(prefixSum(arr));
+        // System.out.println(prefixSum(arr));
+        System.out.println(kadaneAlgorithm(arr));
         
         
     }
