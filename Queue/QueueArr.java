@@ -4,16 +4,18 @@ public class QueueArr {
     int front,rear;
     int[] queue;
     int capacity;
+    int size;
 
     QueueArr(int capacity){
         this.capacity=capacity;
         front=0;
         rear=-1;
+        size=0;
         queue=new int[capacity];
     }
 
     public boolean isEmpty(){
-        return rear==-1;
+        return size==0;
     }
 
     public boolean isFull(){
@@ -27,6 +29,7 @@ public class QueueArr {
         }
         rear++;
         queue[rear]=data;
+        size++;
 
     }
 
@@ -37,7 +40,9 @@ public class QueueArr {
         }
         int data=queue[front];
         front++;
+        size--;
         return data;
+
     }
 
     public int peek(){
