@@ -21,7 +21,6 @@ public class StackUsing2Queue {
 
     public int pop(){
         if(isEmpty()){
-            System.out.println("Queue is empty");
             return -1;
         }
         return q1.remove();
@@ -29,7 +28,6 @@ public class StackUsing2Queue {
 
     public int peek(){
         if(isEmpty()){
-            System.out.println("Queue is empty");
             return -1;
         }
         return q1.peek();
