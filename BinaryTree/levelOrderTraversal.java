@@ -62,7 +62,9 @@ public class levelOrderTraversal {
         Node root=tree.buildTree(nodes);
         System.out.println("Level order Traversal:");
         tree.levelOrder(root);
-        
+        //1 
+        //2 3
+        //4 5 6
     }
     
 }
