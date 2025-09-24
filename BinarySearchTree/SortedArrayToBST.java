@@ -40,7 +40,7 @@ public class SortedArrayToBST {
         int arr[]={3,5,6,8,10,11,12};
 
         /*
-             8
+              8
             /  \
            5    11
           / \   / \
