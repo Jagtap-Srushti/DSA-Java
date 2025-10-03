@@ -31,7 +31,7 @@ public class HeapSort {
             heapify(arr,i,n);
         }
         //step2 push largest at the end
-        for(int i=n-1;i>=0;i--){
+        for(int i=n-1;i>0;i--){
             //swap (largest-first with last)
             int temp=arr[0];
             arr[0]=arr[i];
