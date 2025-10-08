@@ -9,7 +9,7 @@ public class FindTargetElement{
     public static List<Integer> targetIndices(int arr[],int target){
         List<Integer> list=new ArrayList<>(); 
 
-        Arrays.sort(arr);
+        Arrays.sort(arr);         //sort array
 
         for(int i=0;i<arr.length;i++){
             if(arr[i]==target){
