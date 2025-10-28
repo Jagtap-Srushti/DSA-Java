@@ -51,17 +51,18 @@ public class CycleDetectionInUndirectedGraph {
         vis[curr]=true;
         for(int i=0;i<graph[curr].size();i++){
             Edge e=graph[curr].get(i);
-            // case 3
+            // case 3:If not visited call dfs again
             if(!vis[e.dest]){
                 if(detectCycleUtil(graph,vis,e.dest,curr)){
                     return true;
                 }
             }
 
-            // case 2
+            // case 2:If it’s already visited and it’s not the parent,that means you found a cycle.
             else if(vis[e.dest]  && e.dest!=par){
                 return true;
             }
+            // case 3: do nothing ->continue
 
         }
         return false;
