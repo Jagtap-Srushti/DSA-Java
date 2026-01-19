@@ -52,7 +52,7 @@ public class DiameterOfTree {
         }
         Info leftInfo=diameter(root.left);
         Info rightInfo=diameter(root.right);
-        int selfDiam=leftInfo.ht+rightInfo.ht+1;;
+        int selfDiam=leftInfo.ht+rightInfo.ht+1;
 
         int diam=Math.max(leftInfo.diam,Math.max(rightInfo.diam,selfDiam));
         int ht=Math.max(leftInfo.ht,rightInfo.ht)+1;

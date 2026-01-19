@@ -1,10 +1,10 @@
 package Stack;
 
-class Stack{
+class StackArr{
     int maxSize;
     int stackArr[];
     int top;
-    Stack(int size){
+    StackArr(int size){
         maxSize=size;
         stackArr=new int[maxSize];
         top=-1;
@@ -69,7 +69,7 @@ class Stack{
 
 public class StackUsingArray {
     public static void main(String[] args){
-        Stack st=new Stack(5);
+        StackArr st=new StackArr(5);
         st.push(1);
         st.push(2);
         st.push(3);

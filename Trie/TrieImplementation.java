@@ -43,6 +43,7 @@ public class TrieImplementation {
 
         for(int i=0;i<words.length;i++){
             insert(words[i]);
+            
         }   
 
         String key="their";
