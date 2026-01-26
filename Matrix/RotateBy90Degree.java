@@ -1,4 +1,7 @@
 package Matrix;
+
+//Problem Statement: Given an N * N 2D integer matrix, rotate the matrix by 90 degrees clockwise. The rotation must be done in place, meaning the input 2D matrix must be modified directly..
+
 public class RotateBy90Degree {
     public static void rotateBy90Degree(int matrix[][]){
         int n=matrix.length;
