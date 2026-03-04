@@ -1,7 +1,31 @@
 package BinarySearch;
 
 //Given an array of N integers. Every number in the array except one appears twice. Find the single number in the array.
+
 public class SearchSingleElementInSortedArray {
+
+    public static int findSingleElementBrute(int arr[]){
+        int n=arr.length;
+        for(int i=0;i<n;i++){
+            if(i==0){
+                if(arr[i]!=arr[i+1]){
+                    return arr[i];
+                }
+            }
+            if(i==n-1){
+                if(arr[i]!=arr[i-1]){
+                    return arr[i];
+                }
+            }
+            else{
+                if(arr[i]!=arr[i+1] && arr[i]!=arr[i-1]){
+                    return arr[i];
+                }
+            }
+        }
+        return -1;
+    }
+
     public static int findSingleElement(int arr[]){
         int n=arr.length;
         // If array has only one element, return it
