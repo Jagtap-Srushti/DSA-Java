@@ -5,7 +5,7 @@ package BinarySearch;
 public class RowWithMax1InMatrix {
     public static int maxOne(int arr[][]){
         int m=arr.length;  //No. of row
-        int n=arr[0].length;  //NO. OF COLUMN
+        int n=arr[0].length;  //NO. OF Column
 
         int max_One=-1;
         int index=-1;
@@ -21,15 +21,50 @@ public class RowWithMax1InMatrix {
         }
         return index;
     }
+
+
+    public static int lowerBound(int arr[],int n,int k){
+        int low=0;
+        int high=n-1;
+        int ans=n;
+        while(low<=high){
+            int mid=low+(high-low)/2;
+            if(arr[mid]>=k){
+                ans=mid;
+                high=mid-1;
+            }
+            else{
+                low=mid+1;
+            }
+        }
+        return ans;
+
+    }
+    public static int maxOneOptimal(int arr[][]){
+        int m=arr.length;
+        int n=arr[0].length;
+        int max_count=0;
+        int index=-1;
+
+        for(int i=0;i<m;i++){
+            int curr_count=n-lowerBound(arr[i], n, 1);
+            if(curr_count>max_count){
+                max_count=curr_count;
+                index=i;
+            }
+        }
+
+        return index;
+    }
     public static void main(String[] args) {
 
         int arr[][]={
             {0,0,0,1},
-            {0,1,1,1},
+            {0,0,1,1},
             {0,0,1,1},
             {0,1,1,1},
         };
-        System.out.println(maxOne(arr));
+        System.out.println(maxOneOptimal(arr));
         
     }
     
