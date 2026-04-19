@@ -50,7 +50,7 @@ public class SetMatrixZero{
             }
         }
 
-        if(firstRow){
+        if(firstCol){
             for(int i=0;i<m;i++){
                 matrix[i][0]=0;
             }
