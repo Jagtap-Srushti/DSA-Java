@@ -13,6 +13,7 @@ public class SubsetsII {
     public List<List<Integer>> subset2(int nums[]){
         List<List<Integer>> ans=new ArrayList<>();
         List<Integer> curr=new ArrayList<>();
+        Arrays.sort(nums);
         backtracking(ans,nums,curr,0);
         return ans;
     }
